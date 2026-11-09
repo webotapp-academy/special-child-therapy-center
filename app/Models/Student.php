@@ -92,5 +92,20 @@ class Student extends Model
     {
         return $this->hasMany(DailyCareLog::class)->latest('log_date');
     }
+
+    public function behavioralIncidents()
+    {
+        return $this->hasMany(BehavioralIncident::class)->latest('incident_date');
+    }
+
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class)->latest('invoice_date');
+    }
+
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class)->latest('date');
+    }
 }
 

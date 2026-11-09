@@ -39,7 +39,7 @@
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased">
 
     <!-- Top Uniform Header -->
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs print:hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 gap-3">
                 
@@ -207,7 +207,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500 print:hidden">
         <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
             <div class="flex items-center space-x-2">
                 <span class="font-bold text-slate-700">Aura SpecialCare</span>

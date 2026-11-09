@@ -154,12 +154,64 @@ class StudentController extends Controller
             'iepGoals.milestones',
             'therapySessions.therapist',
             'dailyCareLogs.loggedBy',
+            'behavioralIncidents.loggedBy',
+            'invoices.feePackage',
+            'attendances',
         ]);
 
         $therapists = User::whereIn('role', ['therapist', 'admin'])->get();
         $educators = User::whereIn('role', ['educator', 'staff', 'admin'])->get();
+        $feePackages = \App\Models\FeePackage::where('is_active', true)->get();
 
-        return view('students.show', compact('student', 'therapists', 'educators'));
+        return view('students.show', compact('student', 'therapists', 'educators', 'feePackages'));
+    }
+
+    public function addBehavioralIncident(Request $request, Student $student)
+    {
+        $validated = $request->validate([
+            'incident_date' => 'required|date',
+            'incident_time' => 'required',
+            'location' => 'required|string',
+            'antecedent' => 'required|string',
+            'behavior_type' => 'required|string',
+            'behavior_description' => 'nullable|string',
+            'intensity' => 'required|string',
+            'duration_minutes' => 'required|integer|min:1',
+            'intervention_used' => 'required|string',
+            'post_incident_state' => 'nullable|string',
+        ]);
+
+        $student->behavioralIncidents()->create(array_merge($validated, [
+            'logged_by_id' => auth()->id() ?? $student->primary_educator_id,
+            'notified_parent' => true,
+        ]));
+
+        return redirect()->route('students.show', ['student' => $student, 'tab' => 'abc'])
+            ->with('success', 'Behavioral ABC Incident successfully logged!');
+    }
+
+    public function addInvoice(Request $request, Student $student)
+    {
+        $validated = $request->validate([
+            'fee_package_id' => 'nullable|exists:fee_packages,id',
+            'item_description' => 'required|string|max:255',
+            'amount' => 'required|numeric|min:0',
+            'invoice_date' => 'required|date',
+            'due_date' => 'required|date',
+            'status' => 'required|string',
+            'payment_method' => 'nullable|string',
+            'notes' => 'nullable|string',
+        ]);
+
+        $invoiceNo = 'INV-' . date('Y') . '-' . str_pad((\App\Models\Invoice::count() + 1), 3, '0', STR_PAD_LEFT);
+
+        $student->invoices()->create(array_merge($validated, [
+            'invoice_no' => $invoiceNo,
+            'paid_date' => ($validated['status'] === 'paid') ? date('Y-m-d') : null,
+        ]));
+
+        return redirect()->route('students.show', ['student' => $student, 'tab' => 'billing'])
+            ->with('success', "Invoice {$invoiceNo} generated successfully!");
     }
 
     public function addIepGoal(Request $request, Student $student)
