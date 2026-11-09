@@ -23,13 +23,24 @@ class ParentPortalController extends Controller
                     'educator',
                     'iepGoals.milestones',
                     'therapySessions.therapist',
-                    'dailyCareLogs.loggedBy'
+                    'dailyCareLogs.loggedBy',
+                    'attendances',
+                    'invoices.feePackage'
                 ])
                 ->get();
 
             if ($myChildren->isEmpty()) {
                 // Secondary check by phone if email didn't match
-                $myChildren = Student::where('guardian_phone', $user->phone)->get();
+                $myChildren = Student::where('guardian_phone', $user->phone)
+                    ->with([
+                        'educator',
+                        'iepGoals.milestones',
+                        'therapySessions.therapist',
+                        'dailyCareLogs.loggedBy',
+                        'attendances',
+                        'invoices.feePackage'
+                    ])
+                    ->get();
             }
 
             if ($myChildren->isEmpty()) {
@@ -58,7 +69,9 @@ class ParentPortalController extends Controller
                 'educator',
                 'iepGoals.milestones',
                 'therapySessions.therapist',
-                'dailyCareLogs.loggedBy'
+                'dailyCareLogs.loggedBy',
+                'attendances',
+                'invoices.feePackage'
             ]);
 
             $student = $requestedId ? $query->find($requestedId) : $query->first();

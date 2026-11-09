@@ -370,6 +370,42 @@ class DatabaseSeeder extends Seeder
             'is_active' => true,
         ]);
 
+        $pkg3 = \App\Models\FeePackage::create([
+            'name' => 'Individual Speech & Language Therapy (Per Session)',
+            'description' => '1-on-1 45-minute clinical speech & AAC articulation session.',
+            'amount' => 1200.00,
+            'billing_cycle' => 'Per Session',
+            'sessions_count' => 1,
+            'is_active' => true,
+        ]);
+
+        $pkg4 = \App\Models\FeePackage::create([
+            'name' => 'Occupational Therapy & Sensory Integration (Per Session)',
+            'description' => '1-on-1 45-minute sensory diet, fine motor, and vestibular regulation session.',
+            'amount' => 1500.00,
+            'billing_cycle' => 'Per Session',
+            'sessions_count' => 1,
+            'is_active' => true,
+        ]);
+
+        $pkg5 = \App\Models\FeePackage::create([
+            'name' => 'Behavioral Intervention / ABA Therapy (Per Session)',
+            'description' => 'Targeted positive behavioral reinforcement and antecedent coping.',
+            'amount' => 1400.00,
+            'billing_cycle' => 'Per Session',
+            'sessions_count' => 1,
+            'is_active' => true,
+        ]);
+
+        $pkg6 = \App\Models\FeePackage::create([
+            'name' => 'Half-Day Early Intervention Classroom Tuition',
+            'description' => 'Morning 3-hour batch with shadow teacher assistance and circle time socialization.',
+            'amount' => 10000.00,
+            'billing_cycle' => 'Monthly',
+            'sessions_count' => 0,
+            'is_active' => true,
+        ]);
+
         \App\Models\Invoice::create([
             'invoice_no' => 'INV-2026-001',
             'student_id' => $student->id,

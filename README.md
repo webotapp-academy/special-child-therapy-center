@@ -79,10 +79,21 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### 4. Run Migrations & Seed Database
+### 4. Setup the Database (Two Easy Options)
+
+#### Option A: Using Laravel Migrations & Seeders (Recommended)
+Create an empty database named `special` in MySQL / phpMyAdmin, then run:
 ```bash
 php artisan migrate --seed
 ```
+*This automatically builds all tables and populates clinical sample data (Admin, Therapist, and Parent accounts, Enquiries, CARS Diagnostics, Students, IEP Goals, Attendance, and Billing).*
+
+#### Option B: 1-Click MySQL / phpMyAdmin Import
+If you prefer importing a direct SQL file without running CLI commands:
+1. Open phpMyAdmin or your MySQL client and create database `special`.
+2. Click **Import** and choose **`database/special.sql`** included in this repository.
+
+---
 
 ### 5. Launch the Application
 ```bash
