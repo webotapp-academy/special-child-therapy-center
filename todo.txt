@@ -1,0 +1,116 @@
+# SPECIAL CHILD & AUTISTIC CARE SCHOOL MANAGEMENT SYSTEM - MODULES TODO
+
+## 1. Enquiry, Screening & Diagnostic Assessment (Pre-Admission Pipeline) [NEW WORKFLOW]
+- **Enquiry & Lead Intake:**
+  - Parent inquiry registration (walk-in, phone, referral from pediatrician)
+  - Chief complaints / parent concerns (speech delay, hyperactivity, eye contact, repetitive behaviors, sensory aversions)
+  - Follow-up scheduling & status tracking (Inquiry Received, Assessment Scheduled, Assessment Completed, Admitted, Dropped)
+- **Clinical & Diagnostic Assessment:**
+  - Pre-admission evaluation by multidisciplinary team (Developmental Pediatrician, Clinical Psychologist, Speech Therapist, OT)
+  - Diagnostic tools & scoring (CARS, ISAA, DSM-5 criteria, Vineland Social Maturity, Sensory Profile checklist)
+  - Baseline skill evaluation (receptive/expressive language, motor coordination, self-help skills)
+  - Diagnostic report generation with recommendations (Therapy only, Day Schooling, Shadow Teacher required)
+- **Conversion to Formal Admission:**
+  - One-click convert screened diagnostic profile into enrolled student record
+  - Assign student ID/Roll No, classroom batch, primary special educator, and therapy plan
+
+## 2. Authentication & Role-Based Access Control (RBAC) [COMPLETED]
+- Multi-role user authentication with strict route protection:
+  - **1. Admin Login:** Full administrative control (`admin@specialcare.com`)
+  - **2. Therapist Login:** Diagnostics, CARS assessment, IEP & session notes (`priya@specialcare.com`)
+  - **3. Parent Login:** Dedicated access to Parent Progress Portal (`parent@specialcare.com`)
+- Protected application routes: All patient, clinical, and student data requires active authentication.
+- Single-click quick role switchers on the login page for rapid testing and demonstrations.
+- Dynamic navigation bar: shows only relevant menus per authenticated role.
+
+## 3. Student & Child Profiling Module (Specialized)
+- Detailed intake profile & enrollment details (birth history, age, emergency contacts, authorized pickup persons)
+- Diagnostic details & medical background (Autism severity level, ADHD, SPD, allergies, seizure history, medications)
+- Sensory Profile:
+  - Sensory sensitivities (hypersensitive/hyposensitive to light, sound, touch, textures)
+  - Triggers and distress signals
+  - Calming strategies, comfort items, and de-escalation techniques
+  - Communication mode (verbal, non-verbal, PECS, AAC devices, sign language)
+
+## 4. Individualized Education Program (IEP) & Goal Tracking
+- Custom IEP creation for each child with target academic, developmental, and functional goals
+- SMART goal setting categorized by domain:
+  - Speech & Language
+  - Occupational & Fine/Gross Motor Skills
+  - Behavioral & Emotional Regulation
+  - Social & Play Skills
+  - Cognitive & Life Skills / Activities of Daily Living (ADL)
+- Milestone tracking status (Not Started, In Progress, Mastered, Needs Revision, Regressed)
+- Periodic IEP review cycles (Monthly/Quarterly/Annual) with educator and therapist sign-offs
+- Printable IEP documentation & PDF progress reports for parents and doctors
+
+## 5. Multi-Disciplinary Therapy & Clinical Services Module
+- Specialist therapy management:
+  - Applied Behavior Analysis (ABA)
+  - Speech & Language Therapy
+  - Occupational Therapy (OT) & Sensory Integration
+  - Physiotherapy (PT)
+  - Music, Art, and Play Therapy
+- Therapist appointment & therapy slot scheduling
+- Therapy session logs with clinical notes (SOAP format: Subjective, Objective, Assessment, Plan)
+- Therapist-to-child ratio tracking and therapist assignment
+
+## 6. Behavioral Tracking & ABC Incident Log
+- ABC Data Collection (Antecedent - Behavior - Consequence) for tracking challenging behaviors
+- Meltdown & sensory overload logs (trigger, duration, environment, interventions used, outcome)
+- Positive reinforcement tracker & token economy / reward system
+- Behavior analytics & incident pattern heatmaps (identifying triggers by time, noise level, or activity)
+
+## 7. Daily Care & Routine Communication Log (Daily Sheet)
+- Meal & feeding log (intake percentage, food texture tolerance, specialized dietary restrictions)
+- Toilet & hygiene training log (potty schedules, diaper changes, accidents, independent requests)
+- Nap & sleep tracker (duration, restlessness, calming duration)
+- Mood and energy level check-ins (hourly or session-based visual scale)
+- Medication Administration Record (MAR):
+  - Prescribed dosage, scheduled times, administering nurse/staff verification, guardian consent
+
+## 8. Dedicated Parent Portal & Student Progress Dashboard [KEY REQUIREMENT]
+- **Parent Student Progress View:**
+  - Real-time developmental milestone & IEP progress bars (Speech, Motor, Cognitive, Social)
+  - Daily session summaries from Speech, OT, and Behavioral therapists
+  - Daily care summary (meals eaten, bathroom log, nap duration, mood rating)
+  - Media updates: photos & videos of therapy achievements
+  - Downloadable IEP progress report cards & clinical evaluations
+- **Parent-School Interaction:**
+  - Home therapy assignments (exercises to practice with the child at home)
+  - Two-way messaging with assigned special educator & therapists
+  - Medical updates & appointment requests
+
+## 9. Classroom, Educator & Caregiver Management
+- Classroom/Batch allocation with small group / low child-to-teacher ratios
+- Shadow teacher and caregiver assignment per child
+- Adapted visual lesson planning and activity scheduling (Visual schedules / PECS schedules)
+
+## 10. Attendance & Safe Transport Module
+- Daily student & staff attendance with arrival/departure timestamps
+- Absence tracking with reason categories (medical, sensory recovery day, illness)
+- Special transit/bus tracking:
+  - Route planning with dedicated transit attendants/caregivers
+  - Safe pickup and drop-off verification (OTP / guardian signature confirmation)
+
+## 11. Fee, Package & Billing Management
+- Flexible billing structures:
+  - General tuition fee
+  - Per-session therapy packages (e.g., 10 Speech sessions, monthly OT package)
+  - Meal & transport fees
+- Invoice generation, payment receipts, and automated payment reminders
+- Financial summaries and pending fee tracking
+- Subsidies / grants / insurance documentation management (if applicable)
+
+## 12. Reports, Analytics & Progress Visualizer
+- Visual developmental charts (radar/spider charts, milestone progress curves)
+- IEP completion rate & therapy outcome reports
+- Behavioral reduction trends and positive habit formation analytics
+- Exportable comprehensive reports (PDF / Excel) for pediatricians, psychologists, and school audits
+
+## 13. System Settings, Master Data & Configuration
+- Manage therapy types, milestone categories, and diagnosis types
+- Manage classrooms, session timings, and academic calendars
+- System notification preferences (SMS, Email, WhatsApp integration for alerts)
+- Database backup and recovery management
+
