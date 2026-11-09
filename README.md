@@ -1,10 +1,30 @@
 # Aura SpecialCare - Special Child Care & Autism Academy Management System
 
-An open-source, specialized school management and clinical therapy tracking system built with **Laravel** for special education needs (SEN) centers, autism academies, child development clinics, and therapeutic day schools.
+<p align="left">
+  <img src="https://img.shields.io/badge/Laravel-11%20%2F%2012-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
+  <img src="https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+  <img src="https://img.shields.io/badge/TailwindCSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/Alpine.js-3.x-8BC0D0?style=for-the-badge&logo=alpinedotjs&logoColor=white" alt="Alpine.js">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+</p>
 
 ---
 
-## 🌟 Key Features & Workflow
+## 📖 About The Project
+
+**Aura SpecialCare** is an open-source, multi-disciplinary school and clinical management ecosystem purpose-built for **Special Education Needs (SEN) schools, Autism development academies, pediatric therapy clinics, and therapeutic day-care centers**.
+
+Unlike generic school management software that only tracks standard grades and attendance, **Aura SpecialCare** is engineered around the clinical and neurodevelopmental lifecycle of children with Autism Spectrum Disorder (ASD), Speech & Language Delays, ADHD, Sensory Processing Disorders, and related developmental conditions.
+
+### Why Aura SpecialCare?
+* **Clinical Accuracy:** Bridges the gap between medical intake, standardized diagnostic screening (CARS-2 & ISAA), and day-to-day individualized education planning (IEP).
+* **Neurodivergent-First Accommodations:** Tracks unique sensory profiles, tactile/auditory triggers, calming mechanisms (weighted vests, quiet tents), dietary texture tolerances, and sensory recovery days.
+* **Complete Transparency for Parents:** Dedicated, isolated Parent Progress Portal showing real-time developmental mastery, daily routine logs (meals, naps, toileting, mood), and therapist session notes.
+* **Flexible Billing:** Supports both monthly institutional tuition and per-class / per-session therapy billing with 1-click printable clinical fee receipts.
+
+---
+
+## 🌟 Key Features & Clinical Workflow
 
 ### 1. Step 1: Enquiry & Lead Screening Pipeline
 - Register walk-ins, phone inquiries, and pediatrician referrals.
