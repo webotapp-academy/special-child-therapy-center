@@ -166,6 +166,28 @@ class StudentController extends Controller
         return view('students.show', compact('student', 'therapists', 'educators', 'feePackages'));
     }
 
+    public function markAttendance(Request $request, Student $student)
+    {
+        $validated = $request->validate([
+            'date' => 'required|date',
+            'status' => 'required|string|in:present,absent,late,sensory_recovery_day',
+            'arrival_time' => 'nullable',
+            'arrival_state' => 'required|string',
+            'transport_mode' => 'required|string',
+            'bus_route' => 'nullable|string',
+            'transit_attendant' => 'nullable|string',
+            'notes' => 'nullable|string',
+        ]);
+
+        $student->attendances()->updateOrCreate(
+            ['date' => $validated['date']],
+            $validated
+        );
+
+        return redirect()->route('students.show', ['student' => $student, 'tab' => 'attendance'])
+            ->with('success', 'Attendance recorded for ' . Carbon::parse($validated['date'])->format('M d, Y') . '!');
+    }
+
     public function addBehavioralIncident(Request $request, Student $student)
     {
         $validated = $request->validate([

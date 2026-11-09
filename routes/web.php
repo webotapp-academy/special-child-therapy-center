@@ -42,6 +42,9 @@ Route::middleware('auth')->group(function () {
     Route::post('students/{student}/iep-goals', [StudentController::class, 'addIepGoal'])->name('students.addIepGoal');
     Route::post('students/{student}/therapy-sessions', [StudentController::class, 'addTherapySession'])->name('students.addTherapySession');
     Route::post('students/{student}/daily-care-logs', [StudentController::class, 'addDailyCareLog'])->name('students.addDailyCareLog');
+    Route::post('students/{student}/attendance', [StudentController::class, 'markAttendance'])->name('students.markAttendance');
+    Route::post('students/{student}/invoices', [StudentController::class, 'addInvoice'])->name('students.addInvoice');
+    Route::post('students/{student}/behavioral-incidents', [StudentController::class, 'addBehavioralIncident'])->name('students.addBehavioralIncident');
 
     // Parent Progress Portal
     Route::get('parent/progress', [ParentPortalController::class, 'index'])->name('parent.progress');
